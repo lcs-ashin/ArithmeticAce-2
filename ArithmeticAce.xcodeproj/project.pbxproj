@@ -13,6 +13,7 @@
 		81FDA63327B16100002471AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81FDA63227B16100002471AE /* Preview Assets.xcassets */; };
 		8A925B9427B6FAF300602F0A /* AdditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A925B9327B6FAF300602F0A /* AdditionView.swift */; };
 		8A925B9627B6FDC100602F0A /* DivisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A925B9527B6FDC100602F0A /* DivisionView.swift */; };
+		8A925B9827B6FFBE00602F0A /* SubtractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A925B9727B6FFBE00602F0A /* SubtractionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		81FDA63227B16100002471AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A925B9327B6FAF300602F0A /* AdditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionView.swift; sourceTree = "<group>"; };
 		8A925B9527B6FDC100602F0A /* DivisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionView.swift; sourceTree = "<group>"; };
+		8A925B9727B6FFBE00602F0A /* SubtractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtractionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				81FDA62D27B160FF002471AE /* MultiplicationView.swift */,
 				8A925B9327B6FAF300602F0A /* AdditionView.swift */,
 				8A925B9527B6FDC100602F0A /* DivisionView.swift */,
+				8A925B9727B6FFBE00602F0A /* SubtractionView.swift */,
 				81FDA62F27B16100002471AE /* Assets.xcassets */,
 				81FDA63127B16100002471AE /* Preview Content */,
 			);
@@ -147,6 +150,7 @@
 				8A925B9627B6FDC100602F0A /* DivisionView.swift in Sources */,
 				81FDA62C27B160FF002471AE /* ArithmeticAceApp.swift in Sources */,
 				8A925B9427B6FAF300602F0A /* AdditionView.swift in Sources */,
+				8A925B9827B6FFBE00602F0A /* SubtractionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

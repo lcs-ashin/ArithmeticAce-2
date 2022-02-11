@@ -1,5 +1,5 @@
 //
-//  DivisionView.swift
+//  SubtractionView.swift
 //  ArithmeticAce
 //
 //  Created by Russell Gordon on 2022-02-07.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct DivisionView: View {
+struct SubtractionView: View {
     
     // MARK: Stored properties
-    @State var dividend = Int.random(in: 1...12)
-    @State var divisor = Int.random(in: 1...12)
+    @State var minuend = Int.random(in: 1...12)
+    @State var subtrahend = Int.random(in: 1...12)
     @State var inputGiven = ""
     
     // Has an answer been checked?
@@ -23,20 +23,20 @@ struct DivisionView: View {
     // MARK: Computed properties
     // What is the correct product?
     var correctQuotient: Int {
-        return dividend / divisor
+        return minuend - subtrahend
     }
     
     var body: some View {
                 
         VStack(spacing: 0) {
             HStack {
-                Text("÷")
+                Text("-")
                 
                 Spacer()
                 
                 VStack(alignment: .trailing) {
-                    Text("\(dividend)")
-                    Text("\(divisor)")
+                    Text("\(minuend)")
+                    Text("\(subtrahend)")
                 }
             }
             
@@ -94,8 +94,8 @@ struct DivisionView: View {
                 Button(action: {
                     
                     // Generate new numbers
-                    dividend = Int.random(in: 1...12)
-                    divisor = Int.random(in: 1...12)
+                    minuend = Int.random(in: 1...12)
+                    subtrahend = Int.random(in: 1...12)
                     
                     // Reset properties that we are using to keep track of whether a question has been answered... and, whether the answer is correct
                     answerChecked = false
@@ -124,8 +124,8 @@ struct DivisionView: View {
     }
 }
 
-struct DivisionView_Previews: PreviewProvider {
+struct SubtractionView_Previews: PreviewProvider {
     static var previews: some View {
-        DivisionView()
+        SubtractionView()
     }
 }
