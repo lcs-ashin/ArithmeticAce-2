@@ -62,53 +62,57 @@ struct ContentView: View {
                     .multilineTextAlignment(.trailing)
             }
             
-            Button(action: {
-                
-                // Answer has been checked!
-                answerChecked = true
-                
-                // Convert the input given to an integer, if possible
-                guard let productGiven = Int(inputGiven) else {
-                    // Sadness, not a number
-                    answerCorrect = false
-                    return
-                }
+            ZStack {
+                Button(action: {
+                    
+                    // Answer has been checked!
+                    answerChecked = true
+                    
+                    // Convert the input given to an integer, if possible
+                    guard let productGiven = Int(inputGiven) else {
+                        // Sadness, not a number
+                        answerCorrect = false
+                        return
+                    }
 
-                // Check the answer!
-                if productGiven == correctProduct {
-                    // Celebrate! 👍🏼
-                    answerCorrect = true
-                } else {
-                    // Sadness, they gave a number, but it's correct 😭
+                    // Check the answer!
+                    if productGiven == correctProduct {
+                        // Celebrate! 👍🏼
+                        answerCorrect = true
+                    } else {
+                        // Sadness, they gave a number, but it's correct 😭
+                        answerCorrect = false
+                    }
+                }, label: {
+                    Text("Check Answer")
+                        .font(.largeTitle)
+                })
+                    .padding()
+                    .buttonStyle(.bordered)
+                    .opacity(answerCorrect == false && answerChecked == false ? 1.0 : 0.0)
+                
+                Button(action: {
+                    
+                    // Generate new numbers
+                    multiplicand = Int.random(in: 1...12)
+                    multiplier = Int.random(in: 1...12)
+                    
+                    // Reset properties that we are using to keep track of whether a question has been answered... and, whether the answer is correct
+                    answerChecked = false
                     answerCorrect = false
-                }
-            }, label: {
-                Text("Check Answer")
-                    .font(.largeTitle)
-            })
-                .padding()
-                .buttonStyle(.bordered)
-            
-            Button(action: {
-                
-                // Generate new numbers
-                multiplicand = Int.random(in: 1...12)
-                multiplier = Int.random(in: 1...12)
-                
-                // Reset properties that we are using to keep track of whether a question has been answered... and, whether the answer is correct
-                answerChecked = false
-                answerCorrect = false
-                
-                // Reset the field where the user gives an answer
-                inputGiven = ""
-                
-            }, label: {
-                
-                Text("New Question")
-                    .font(.largeTitle)
-            })
-                .padding()
-                .buttonStyle(.bordered)
+                    
+                    // Reset the field where the user gives an answer
+                    inputGiven = ""
+                    
+                }, label: {
+                    
+                    Text("New Question")
+                        .font(.largeTitle)
+                })
+                    .padding()
+                    .buttonStyle(.bordered)
+                    .opacity(answerCorrect && answerChecked ? 1.0 : 0.0)
+            }
             
             
             Spacer()
